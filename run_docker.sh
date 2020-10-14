@@ -1,0 +1,1 @@
+sudo docker run -v $PWD/temp/:/code/vietnamese-speech-recognition/temp/ -it vietnamese-speech-recognition

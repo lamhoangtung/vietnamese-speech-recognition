@@ -126,5 +126,4 @@ class Transcriber:
         transcripts = [t[1] for t in transcripts]
         
         sh.rm(sh.glob(self.output_path + '/*'))
-        
         return transcripts

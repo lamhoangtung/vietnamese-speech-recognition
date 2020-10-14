@@ -56,7 +56,7 @@ class Transcriber:
         print(self.__dict__)
         
     def decode(self, input_file, output_path):
-        cmd = ['sudo']
+        cmd = [] #['sudo']
         cmd.append(os.path.join(self.w2letter,'build/Decoder'))
         cmd.append('--am=' + self.am)
         cmd.append('--tokensdir=' + self.tokensdir)
@@ -126,5 +126,4 @@ class Transcriber:
         transcripts = [t[1] for t in transcripts]
         
         sh.rm(sh.glob(self.output_path + '/*'))
-        
         return transcripts

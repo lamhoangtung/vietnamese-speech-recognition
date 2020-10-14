@@ -25,7 +25,7 @@ RUN apt-get update && \
 
 # Gloo
 COPY gloo.zip .
-RUN apt-get install -y openmpi-bin openmpi-common libopenmpi-dev && \
+RUN apt-get install -y openmpi-bin openmpi-common libopenmpi-dev unzip && \
     unzip -qq gloo.zip && \
     cd gloo && mkdir -p build && cd build && \
     cmake .. -DUSE_MPI=ON && \
@@ -63,7 +63,7 @@ RUN apt-get install -y libhdf5-dev && \
     make -j8
 
 COPY requirements.txt /tmp/requirements.txt
-RUN pip3 install -U requirements.txt
+RUN pip3 install -U -r /tmp/requirements.txt
 
 RUN mkdir /code/vietnamese-speech-recognition
 COPY . /code/vietnamese-speech-recognition

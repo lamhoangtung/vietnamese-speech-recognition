@@ -5,3 +5,4 @@ soundfile
 h5py
 pydub
 sh
+matplotlib

@@ -62,6 +62,9 @@ RUN apt-get install -y libhdf5-dev && \
     cd build && cmake .. -DCMAKE_BUILD_TYPE=Release -DW2L_LIBRARIES_USE_CUDA=OFF -DKENLM_MAX_ORDER=20 && \
     make -j8
 
+# Minor
+RUN apt-get install -y ffmpeg
+
 COPY requirements.txt /tmp/requirements.txt
 RUN pip3 install -U -r /tmp/requirements.txt
 
